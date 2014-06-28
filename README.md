@@ -1,19 +1,16 @@
 text-truncate
 ================
 
+This is a web component that will help you to truncate text.
+You can truncate passing the number of characters or words.
+
+This component was inspired on the AngularJs module [angular-truncate](https://github.com/sparkalow/angular-truncate)
+
 See the [component page](http://juanpujol.github.io/text-truncate) for more information.
 
 ## Getting Started
 
 We've put together a [guide for text-truncate](http://www.polymer-project.org/docs/start/reusableelements.html) to help get you rolling.
-
-
-# &lt;truncate-text&gt;
-
-> This is a web component that will help you to truncate text.
-> You can truncate passing the number of characters or words.
->
-> This component was inspired on the AngularJs module [angular-truncate](https://github.com/sparkalow/angular-truncate)
 
 ## Demo
 
@@ -46,7 +43,16 @@ Or [download as ZIP](https://github.com/my-user/my-repo/archive/master.zip).
 3. Start using it!
 
     ```html
-    <truncate-text></truncate-text>
+    <truncate-text characters="75">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+    </truncate-text>
+    <!-- Renders: Lorem ipsum dolor sit amet, consectetur adipisicing elit. ... -->
     ```
 
 ## Options
