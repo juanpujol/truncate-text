@@ -2,14 +2,46 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <script src="../platform/platform.js"></script>
-  <link rel="import" href="../polymer/polymer.html">
-  <link rel="import" href="../core-component-page/core-component-page.html">
+  <title>truncate-text Demo</title>
+
+  <script src="bower_components/platform/platform.js"></script>
+  <link rel="import" href="src/truncate-text.html">
 
 </head>
 <body unresolved>
 
-  <core-component-page></core-component-page>
+    <h1>An `truncate-text` looks like this:</h1>
+
+    <h2>Truncate on 22 words</h2>
+    <p>
+        <truncate-text words="22">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore
+            facilis sequi natus, nihil error explicabo ea pariatur rerum unde
+            possimus dolor voluptates, quae ut!
+        </truncate-text>
+    </p>
+
+    <h2>Truncate on 75 characters. Will not break the last word</h2>
+    <p>
+        <truncate-text characters="75">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore
+            facilis sequi natus, nihil error explicabo ea pariatur rerum unde
+            possimus dolor voluptates, quae ut!
+        </truncate-text>
+    </p>
+
+    <h2>Truncate on 75 characters.</h2>
+    <p>
+        <truncate-text characters="75" break-last-word="true">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore
+            facilis sequi natus, nihil error explicabo ea pariatur rerum unde
+            possimus dolor voluptates, quae ut!
+        </truncate-text>
+    </p>
+
 
 </body>
 </html>
