@@ -1,7 +1,7 @@
 {
   "name": "truncate-text",
-  "version": "0.0.0",
-  "keywords": "seed, polymer, web-components",
+  "version": "0.1.0",
+  "keywords": "seed, polymer, web-components, truncate, text",
   "main": "truncate-text.html",
   "dependencies": {
     "polymer": "Polymer/polymer#~0.3.1"

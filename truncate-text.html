@@ -5,7 +5,26 @@ Element providing solution to no problem in particular.
 
 ##### Example
 
-    <truncate-text></truncate-text>
+    <h2>Truncate on 22 words</h2>
+    <p>
+        <truncate-text words="22">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore facilis sequi natus, nihil error explicabo ea pariatur rerum unde possimus dolor voluptates, quae ut!
+        </truncate-text>
+    </p>
+
+    <h2>Truncate on 75 characters. Will not break the last word</h2>
+    <p>
+        <truncate-text characters="75">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore facilis sequi natus, nihil error explicabo ea pariatur rerum unde possimus dolor voluptates, quae ut!
+        </truncate-text>
+    </p>
+
+    <h2>Truncate on 75 characters.</h2>
+    <p>
+        <truncate-text characters="75" break-last-word="true">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore facilis sequi natus, nihil error explicabo ea pariatur rerum unde possimus dolor voluptates, quae ut!
+        </truncate-text>
+    </p>
 
 @element truncate-text
 @blurb Element providing solution to no problem in particular.
