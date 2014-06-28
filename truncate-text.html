@@ -12,7 +12,7 @@ Element providing solution to no problem in particular.
 @status alpha
 @homepage http://juanpujol.github.io/truncate-text
 -->
-<polymer-element name="truncate-text" attributes="characters words word" noscript>
+<polymer-element name="truncate-text" attributes="characters words break-last-word" noscript>
 
   <template>
 
@@ -27,7 +27,7 @@ Element providing solution to no problem in particular.
             if (this.words && !this.characters) {
                 this.textContent = truncateByWords(this.textContent, this.words);
             } else {
-                this.textContent = truncateByCharacters(this.textContent, this.characters);
+                this.textContent = truncateByCharacters(this.textContent, this.characters, this['break-last-word']);
             }
         }
     });
@@ -50,24 +50,20 @@ Element providing solution to no problem in particular.
         if (input && input.length > chars) {
             input = input.trim().substring(0, chars);
 
-            if (breakOnWord) {
-                console.log('not breakOnWord')
+            if (!breakOnWord) {
                 var lastspace = input.lastIndexOf(' ');
-                //get last space
                 if (lastspace !== -1) {
                     input = input.substr(0, lastspace);
                 }
             } else {
-                console.log('breakOnWord')
                 while (input.charAt(input.length-1) === ' ') {
                     input = input.substr(0, input.length -1);
                 }
             }
 
-            console.log(input.length, chars)
-
             return input + '...';
         }
+
         return input;
     };
 

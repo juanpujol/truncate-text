@@ -10,25 +10,25 @@
 </head>
 <body unresolved>
 
-    <p>An `truncate-text` looks like this:</p>
+    <h1>An `truncate-text` looks like this:</h1>
 
+    <h2>Truncate on 22 words</h2>
     <p>
-        Truncate on 22 words. <br>
         <truncate-text words="22">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore facilis sequi natus, nihil error explicabo ea pariatur rerum unde possimus dolor voluptates, quae ut!
         </truncate-text>
     </p>
 
+    <h2>Truncate on 75 characters. Will not break the last word</h2>
     <p>
-        Truncate on 45 characters. <br>
-        <truncate-text characters="45">
+        <truncate-text characters="75">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore facilis sequi natus, nihil error explicabo ea pariatur rerum unde possimus dolor voluptates, quae ut!
         </truncate-text>
     </p>
 
+    <h2>Truncate on 75 characters.</h2>
     <p>
-        Truncate on 45 characters. Don't break last word<br>
-        <truncate-text characters="45" word>
+        <truncate-text characters="75" break-last-word="true">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore facilis sequi natus, nihil error explicabo ea pariatur rerum unde possimus dolor voluptates, quae ut!
         </truncate-text>
     </p>
