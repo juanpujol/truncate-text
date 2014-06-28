@@ -5,14 +5,14 @@ Element providing solution to no problem in particular.
 
 ##### Example
 
-    <text-truncate></text-truncate>
+    <truncate-text></truncate-text>
 
-@element text-truncate
+@element truncate-text
 @blurb Element providing solution to no problem in particular.
 @status alpha
-@homepage http://juanpujol.github.io/text-truncate
+@homepage http://juanpujol.github.io/truncate-text
 -->
-<polymer-element name="text-truncate" attributes="characters words" noscript>
+<polymer-element name="truncate-text" attributes="characters words word" noscript>
 
   <template>
 
@@ -22,12 +22,12 @@ Element providing solution to no problem in particular.
 
   <script>
 
-    Polymer('text-truncate', {
+    Polymer('truncate-text', {
         ready: function () {
             if (this.words && !this.characters) {
-                this.textContent = truncateByWords(this.textContent, 10);
-            } else if (this.characters && !this.words) {
-                this.textContent = truncateByCharacters(this.textContent, 10);
+                this.textContent = truncateByWords(this.textContent, this.words);
+            } else {
+                this.textContent = truncateByCharacters(this.textContent, this.characters);
             }
         }
     });
@@ -48,20 +48,24 @@ Element providing solution to no problem in particular.
         if (isNaN(chars)) return input;
         if (chars <= 0) return '';
         if (input && input.length > chars) {
-            input = input.substring(0, chars);
+            input = input.trim().substring(0, chars);
 
-            if (!breakOnWord) {
-                console.log(input)
+            if (breakOnWord) {
+                console.log('not breakOnWord')
                 var lastspace = input.lastIndexOf(' ');
                 //get last space
                 if (lastspace !== -1) {
                     input = input.substr(0, lastspace);
                 }
-            }else{
-                while(input.charAt(input.length-1) === ' '){
+            } else {
+                console.log('breakOnWord')
+                while (input.charAt(input.length-1) === ' ') {
                     input = input.substr(0, input.length -1);
                 }
             }
+
+            console.log(input.length, chars)
+
             return input + '...';
         }
         return input;
