@@ -6,11 +6,9 @@ You can truncate passing the number of characters or words.
 
 This component was inspired on the AngularJs module [angular-truncate](https://github.com/sparkalow/angular-truncate)
 
-See the [component page](http://juanpujol.github.io/text-truncate) for more information.
-
 ## Demo
 
-[Check it live!](http://juanpujol.github.io/truncate-text)
+[Check it live!](http://juanpujol.github.io/truncate-text/)
 
 ## Install
 
@@ -20,7 +18,7 @@ Install the component using [Bower](http://bower.io/):
 $ bower install truncate-text --save
 ```
 
-Or [download as ZIP](https://github.com/my-user/my-repo/archive/master.zip).
+Or [download as ZIP](https://github.com/juanpujol/truncate-text/archive/master.zip).
 
 ## Usage
 
