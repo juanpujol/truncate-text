@@ -1,4 +1,4 @@
-text-truncate
+truncate-text
 ================
 
 This is a web component that will help you to truncate text.
