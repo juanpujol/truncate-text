@@ -51,12 +51,15 @@ Element providing solution to no problem in particular.
   <script>
 
     Polymer('truncate-text', {
-        ready: function () {
+        truncate: function () {
             if (this.words && !this.characters) {
                 this.textContent = truncateByWords(this.textContent, this.words);
             } else {
                 this.textContent = truncateByCharacters(this.textContent, this.characters, this['break-last-word']);
             }
+        },
+        ready: function () {
+            this.truncate();
         }
     });
 
