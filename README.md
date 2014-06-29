@@ -55,7 +55,7 @@ Attribute         | Options     | Default      | Description
 ---               | ---         | ---          | ---
 `words`           | *number*    | `undefined`  | Number of words.
 `characters`      | *number*    | `undefined`  | Number of characters.
-`break-last-word` | *boolean*   | `false`      | Truncate last word if using characters
+`breaklastword`   | *boolean*   | `false`      | Truncate last word if using characters
 
 ## Development
 

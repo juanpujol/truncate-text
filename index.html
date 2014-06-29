@@ -1,47 +1,157 @@
 <!doctype html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>truncate-text Demo</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>truncate-text Web Component</title>
 
-  <script src="bower_components/platform/platform.js"></script>
-  <link rel="import" href="src/truncate-text.html">
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="src/truncate-text.html">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway:400,700">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/foundation.min.css">
+
+    <style>
+        body {
+            background-color: smokewhite;
+            color: #666;
+            font-family: Raleway, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: normal;
+            margin: 10px 0;
+        }
+        .btn {
+            background-color: #d14;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .btn:hover {
+            background-color: #c20e3b;
+        }
+    </style>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </head>
 <body unresolved>
 
-    <h1>An `truncate-text` looks like this:</h1>
+<div class="container">
 
-    <h2>Truncate on 22 words</h2>
-    <p>
-        <truncate-text words="22">
+<h1>truncate-text</h1>
+
+<p>This is a web component that will help you to truncate text. You can truncate passing the number of characters or words.</p>
+</p>This component was inspired on the AngularJs module angular-truncate</p>
+
+<p>
+    <a class="btn" href="https://github.com/juanpujol/truncate-text">Download on Github</a>
+</p>
+
+<h2>Truncate on 22 words</h2>
+
+<p>
+<pre>
+    <code>
+    &lt;p&gt;
+        &lt;truncate-text words="22"&gt;
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Consequuntur, molestias, consequatur. Ipsam
+            adipisci iure, labore facilis sequi natus, nihil
+            error explicabo ea pariatur rerum unde possimus
+            dolor voluptates, quae ut!
+        &lt;/truncate-text&gt;
+    &lt;/p&gt;
+    </code>
+</pre>
+</p>
+
+<h3>Will render:</h3>
+
+<p>
+    <truncate-text words="22">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore
+        facilis sequi natus, nihil error explicabo ea pariatur rerum unde
+        possimus dolor voluptates, quae ut!
+    </truncate-text>
+</p>
+
+<h2>Truncate on 75 characters. Will not break the last word</h2>
+
+<p>
+<pre>
+    <code>
+    &lt;p&gt;
+        &lt;truncate-text characters="75"&gt;
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore
-            facilis sequi natus, nihil error explicabo ea pariatur rerum unde
-            possimus dolor voluptates, quae ut!
-        </truncate-text>
-    </p>
+            Consequuntur, molestias, consequatur. Ipsam adipisci iure,
+            labore facilis sequi natus, nihil error explicabo ea pariatur
+            rerum unde possimus dolor voluptates, quae ut!
+        &lt;/truncate-text&gt;
+    &lt;/p&gt;
+    </code>
+</pre>
+</p>
 
-    <h2>Truncate on 75 characters. Will not break the last word</h2>
-    <p>
-        <truncate-text characters="75">
+<h3>Will render:</h3>
+
+<p>
+    <truncate-text characters="75">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore
+        facilis sequi natus, nihil error explicabo ea pariatur rerum unde
+        possimus dolor voluptates, quae ut!
+    </truncate-text>
+</p>
+
+<h2>Truncate on 75 characters breaking the last word</h2>
+
+<pre>
+    <code>
+    &lt;p&gt;
+        &lt;truncate-text characters="75" breaklastword="true"&gt;
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore
-            facilis sequi natus, nihil error explicabo ea pariatur rerum unde
-            possimus dolor voluptates, quae ut!
-        </truncate-text>
-    </p>
+            Consequuntur, molestias, consequatur. Ipsam adipisci iure,
+            labore facilis sequi natus, nihil error explicabo ea pariatur
+            rerum unde possimus dolor voluptates, quae ut!
+        &lt;/truncate-text&gt;
+    &lt;/p&gt;
+    </code>
+</pre>
+</p>
 
-    <h2>Truncate on 75 characters.</h2>
-    <p>
-        <truncate-text characters="75" break-last-word="true">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore
-            facilis sequi natus, nihil error explicabo ea pariatur rerum unde
-            possimus dolor voluptates, quae ut!
-        </truncate-text>
-    </p>
+<h3>Will render:</h3>
 
+<p>
+    <truncate-text characters="75" breaklastword="true">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Consequuntur, molestias, consequatur. Ipsam adipisci iure, labore
+        facilis sequi natus, nihil error explicabo ea pariatur rerum unde
+        possimus dolor voluptates, quae ut!
+    </truncate-text>
+</p>
+
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-15358702-13', 'auto');
+  ga('send', 'pageview');
+</script>
 
 </body>
 </html>
